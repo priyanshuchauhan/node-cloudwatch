@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
     return res.send("Use POST");
 });
 
-app.post('/upload-logs', (req, res) => {
+app.post('/', (req, res) => {
     const message = req.body.message || 'No Message';
     const logLevel = req.body.level || 'LOG';
     console.log(`## ${logLevel} message: `, message);

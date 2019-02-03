@@ -1,0 +1,21 @@
+ ExpressLambda:
+    warmup: true
+    handler: APIs/APIs/express-experiment/lambda.handler
+    runtime: nodejs8.10
+    events:
+      - http:
+          path: /app/express-experiment
+          method: ANY
+          cors: true
+          authorizer: Authorizer
+      - http:
+          path: /app/express-experiment/topic/{proxy+}
+          method: ANY
+          cors: true
+          authorizer: Authorizer
+    vpc:
+      vpcName: '${env:VPC_NAME}'
+      securityGroupIds:
+        - ${env:VPC_SECURITY_GROUP}
+      subnetIds:
+        - ${env:VPC_SUBNET}
