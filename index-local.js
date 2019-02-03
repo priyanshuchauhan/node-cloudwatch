@@ -1,6 +1,8 @@
 import express from 'express';
 
-const app = express();
+const app = express()
+const port = 3000;
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -15,5 +17,7 @@ app.post('/upload-logs', (req, res) => {
     console.debug(`%% ${logLevel} message: `, message);
     return res.send("OK");
 });
+
+app.listen(port, () => console.log(`Hello app listening on port ${port}!`));
 
 export default app;

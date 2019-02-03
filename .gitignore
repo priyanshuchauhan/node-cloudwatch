@@ -12,6 +12,3 @@ dist
 
 #yarn
 yarn.lock
-
-#build
-build

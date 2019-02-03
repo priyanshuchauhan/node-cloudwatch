@@ -6,6 +6,7 @@
   "scripts": {
     "babel-node": "babel-node --presets=env",
     "start": "nodemon --exec npm run babel-node -- ./index.js",
+    "start-local": "nodemon --exec npm run babel-node -- ./index-local.js",
     "buildOld": "babel src -d dist",
     "build": "rm -rf dist && webpack --mode production --config webpack.config.js"
   },
@@ -15,6 +16,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "nodemon": "^1.18.3",
+    "terser": "^3.14.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   },
